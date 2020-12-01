@@ -8,13 +8,15 @@ import {HttpClientModule} from '@angular/common/http';
 import {ConvertToSpacesPipe} from './pipe/convert-to-spaces-pipe';
 import { CustomerComponent } from './customer/customer.component';
 import {FormsModule} from '@angular/forms';
+import { CreateItemComponent } from './create-item/create-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
     ConvertToSpacesPipe,
-    CustomerComponent
+    CustomerComponent,
+    CreateItemComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,17 @@
   background-color: black;
 }
 
-.card-columns{
+/*.card-columns{*/
+/*  max-width: 1800px;*/
+/*}*/
+
+.item-page{
   max-width: 1800px;
+  padding: 0 10px;
+}
+
+.header{
+  padding: 10px 0;
 }
 
 

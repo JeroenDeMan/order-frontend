@@ -1,11 +1,13 @@
-<div class="text-center page-info">
-  <h2>{{title}}</h2>
-  <input type="text"
-  [(ngModel)]="filter">
-  <div>Filtered {{filter}}</div>
+<div class="item-page mx-auto">
+
+<div class="header">
+  <div class="d-inline-block justify-content-start">  <h2>{{title}}</h2></div>
+  <div class="d-inline-block float-right">  <input type="text" placeholder="Filter by name..."
+                                                           [(ngModel)]="filter"></div>
+
 </div>
 
-<div class="card-columns mx-auto ">
+<div class="card-columns">
   <div class="card " *ngFor="let item of filteredItems">
     <div class="card-header">
       <div class="card-title text-center">{{item.name}}</div>
@@ -14,8 +16,6 @@
       <img src="#" alt="image of {{item.name}}" width="500" height="600">
     </div>
     <div class="card-footer justify-content-between">
-      <!--      <span >Price {{item.price | currency:'EUR':'symbol':'1.2-2'}}</span>-->
-      <!--      <span >{{item.stockUrgency | lowercase}}</span>-->
       <div class="d-inline"> Price {{item.price | currency:'EUR':'symbol':'1.2-2'}}</div>
       <div class="d-inline float-right"> {{item.stockUrgency | lowercase | convertToSpaces: "_"}}
         <span class="dot" [ngStyle]="{'background-color':getColor(item)}"></span>
@@ -23,5 +23,6 @@
 
     </div>
   </div>
+</div>
 </div>
 
