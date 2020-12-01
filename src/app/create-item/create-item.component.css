@@ -1,0 +1,30 @@
+.header {
+  padding: 10px 0;
+}
+
+.create-page {
+  max-width: 1800px;
+}
+
+.submit-btn,
+.cancel-btn {
+  min-height: 55px;
+
+}
+
+.submit-btn {
+  background-color: green;
+  min-width: 70%;
+  margin: 0 15px;
+}
+
+.cancel-btn {
+  background-color: lightgray;
+  border-color: lightgray;
+  min-width: 20%;
+  color: black;
+}
+
+.form-btn {
+  padding-top: 15px;
+}

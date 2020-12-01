@@ -2,4 +2,6 @@ html{
   background: lightblue;
 }
 
-
+body{
+  padding: 0 10px;
+}
