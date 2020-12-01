@@ -9,6 +9,7 @@ import {ConvertToSpacesPipe} from './pipe/convert-to-spaces-pipe';
 import { CustomerComponent } from './customer/customer.component';
 import {FormsModule} from '@angular/forms';
 import { CreateItemComponent } from './create-item/create-item.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreateItemComponent } from './create-item/create-item.component';
     ItemComponent,
     ConvertToSpacesPipe,
     CustomerComponent,
-    CreateItemComponent
+    CreateItemComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,

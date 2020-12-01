@@ -10,7 +10,7 @@
 <div class="card-columns">
   <div class="card " *ngFor="let item of filteredItems">
     <div class="card-header">
-      <div class="card-title text-center">{{item.name}}</div>
+      <div class="card-title text-center" ><a routerLink="detail/{{item.id}}">{{item.name}}</a> </div>
     </div>
     <div class="card-body">
       <img src="#" alt="image of {{item.name}}" width="500" height="600">

@@ -19,16 +19,13 @@ export class ItemService {
     return this.http.get<Item[]>(this.itemUrl);
   }
 
-  // searchItem(term:String):Observable<Item[]> {
-  //   if(!term.trim()) {
-  //     return of([]);
-  //   }
-  //
-  //   return this.http.get<Item[]>(`${this.itemUrl}/?name=]${term}`)
-  // }
-
   createItem(item:CreateItem):Observable<any>{
     console.log(item);
     return this.http.post<any>(this.itemUrl, item, this.httpOptions);
+  }
+
+  getItemById(id:string):Observable<Item>{
+    const urlForId = `${this.itemUrl}/${id}`;
+    return this.http.get<Item>(urlForId);
   }
 }
