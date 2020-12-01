@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {Item} from '../item/item';
 
 @Injectable({
@@ -14,5 +14,13 @@ export class ItemService {
 
   getItems(): Observable<Item[]>{
     return this.http.get<Item[]>(this.itemUrl);
+  }
+
+  searchItem(term:String):Observable<Item[]> {
+    if(!term.trim()) {
+      return of([]);
+    }
+
+    return this.http.get<Item[]>(`${this.itemUrl}/?name=]${term}`)
   }
 }

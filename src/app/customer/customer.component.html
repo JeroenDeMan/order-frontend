@@ -1,0 +1,21 @@
+<div class="table-responsive">
+<table class="table table-bordered table-striped boundary mx-auto ">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">First name</th>
+    <th scope="col">Last name</th>
+    <th scope="col"><button class="btn-primary">New Customer</button> </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td>{{customer.id}}</td>
+    <td>{{customer.firstname}}</td>
+    <td>{{customer.lastname}}</td>
+    <td><button class="btn-primary">View</button>
+      <button class="btn-primary">Edit</button> </td>
+  </tr>
+  </tbody>
+</table>
+</div>
