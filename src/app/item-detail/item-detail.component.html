@@ -1,2 +1,40 @@
-<p>{{item.name }}</p>
-<button class="btn-primary" (click)="goBack()">Go back</button>
+<div *ngIf="item" class="detail-page mx-auto">
+
+  <div class="mx-auto create-page">
+    <div class="header">
+      <h2>{{title}}</h2>
+    </div>
+    <form >
+      <div class="form-group validation" >
+        <label for="itemName">Name</label>
+        <input name="itemName" class="form-control" type="text" id="itemName" [(ngModel)]="item.name"  [required]="true" [disabled]="!itemChangeable" >
+      </div>
+      <div class="form-group">
+        <label for="itemDescription">Description.</label>
+        <textarea #itemDescription class="form-control" id="itemDescription" rows="5" [maxLength]="maxChars" [disabled]="!itemChangeable"></textarea>
+
+      </div>
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label for="price">Price</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">€</div>
+            </div>
+            <input #price type="number" class="form-control" id="price" [disabled]="!itemChangeable" >
+          </div>
+        </div>
+        <div class="col-auto">
+          <label for="stock-amount">Amount of Stock</label>
+          <input #amountOfStock type="number" class="form-control mb-2" id="stock-amount" [disabled]="!itemChangeable">
+        </div>
+      </div>
+      <div class="form-btn btn-group justify-content-end">
+        <button class="btn-primary update-btn rounded-pill border-0 font-weight-bold"
+                (click)="updateItem()"
+                [ngStyle]="{'background-color':itemChangeable ? 'green' : 'lightblue' }">{{itemChangeable ? 'UPDATE' : 'EDIT'}}</button>
+        <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" (click)="goBack()" >CANCEL</button>
+      </div>
+    </form>
+  </div>
+</div>

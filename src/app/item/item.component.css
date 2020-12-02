@@ -10,10 +10,6 @@
   background-color: black;
 }
 
-/*.card-columns{*/
-/*  max-width: 1800px;*/
-/*}*/
-
 .item-page{
   max-width: 1800px;
 }
@@ -21,5 +17,11 @@
 .header{
   padding: 10px 0;
 }
+
+.detail-link{
+  text-decoration: none;
+  color: #000;
+}
+
 
 

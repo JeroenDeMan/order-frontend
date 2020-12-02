@@ -1,0 +1,28 @@
+.btn-group {
+  min-width: 100%;
+}
+
+.update-btn,
+.cancel-btn{
+  min-height: 45px;
+}
+
+
+.update-btn {
+  background-color: lightblue;
+  color: black;
+  min-width: 15%;
+  margin-right: 2%;
+}
+
+.cancel-btn {
+  background-color: grey;
+  min-width: 10%;
+
+}
+
+
+.detail-page{
+  max-width: 1800px;
+}
+

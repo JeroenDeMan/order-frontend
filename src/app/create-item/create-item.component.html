@@ -2,14 +2,15 @@
   <div class="header">
     <h2>{{title}}</h2>
   </div>
-  <form>
+  <form >
     <div class="form-group validation" >
       <label for="itemName">Name</label>
-      <input #itemName class="form-control" type="text" id="itemName" [required]="true">
+      <input #itemName name="itemName" class="form-control" type="text" id="itemName" [required]="true" [(ngModel)]="defaultValueItem">
     </div>
     <div class="form-group">
       <label for="itemDescription">Description.</label>
-      <textarea #itemDescription class="form-control" id="itemDescription" rows="5" maxlength="255"></textarea>
+      <textarea #itemDescription name="itemDescription" class="form-control" id="itemDescription" rows="5" [maxLength]="maxChars" [(ngModel)]="defaultValueDescription" ></textarea>
+
     </div>
     <div class="form-row align-items-center">
       <div class="col-auto">
@@ -18,19 +19,19 @@
           <div class="input-group-prepend">
             <div class="input-group-text">€</div>
           </div>
-          <input #price type="number" class="form-control" id="price">
+          <input #price name="price" type="number" class="form-control" id="price" [(ngModel)]="defaultValuePrice">
         </div>
       </div>
       <div class="col-auto">
         <label for="stock-amount">Amount of Stock</label>
-        <input #amountOfStock type="number" class="form-control mb-2" id="stock-amount">
+        <input #amountOfStock name="amountOfStock" type="number" class="form-control mb-2" id="stock-amount" [(ngModel)]="defaultValueStock">
       </div>
     </div>
-    <div class="form-btn">
+    <div class="form-btn ">
       <button class="btn-primary submit-btn rounded-pill border-0 font-weight-bold" type="submit"
       (click)="createItem(itemName.value, itemDescription.value, +price.value, +amountOfStock.value)"
       >CREATE</button>
-      <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" >CANCEL</button>
+      <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" (click)="resetForm()" >CANCEL</button>
     </div>
   </form>
 </div>

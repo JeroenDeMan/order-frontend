@@ -10,14 +10,14 @@
 <div class="card-columns">
   <div class="card " *ngFor="let item of filteredItems">
     <div class="card-header">
-      <div class="card-title text-center" ><a routerLink="detail/{{item.id}}">{{item.name}}</a> </div>
+      <div class="card-title text-center" ><a class="detail-link" routerLink="detail/{{item.id}}">{{item.name}}</a> </div>
     </div>
     <div class="card-body">
-      <img src="#" alt="image of {{item.name}}" width="500" height="600">
+      <a class = "detail-link "routerLink="detail/{{item.id}}"><img src="#" alt="image of {{item.name}}" width="500" height="600"></a>
     </div>
     <div class="card-footer justify-content-between">
       <div class="d-inline"> Price {{item.price | currency:'EUR':'symbol':'1.2-2'}}</div>
-      <div class="d-inline float-right"> {{item.stockUrgency | lowercase | convertToSpaces: "_"}}
+      <div class="d-inline float-right text-capitalize"> {{item.stockUrgency | lowercase | convertToSpaces: "_"}}
         <span class="dot" [ngStyle]="{'background-color':getColor(item)}"></span>
       </div>
 
