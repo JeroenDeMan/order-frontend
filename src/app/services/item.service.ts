@@ -28,4 +28,10 @@ export class ItemService {
     const urlForId = `${this.itemUrl}/${id}`;
     return this.http.get<Item>(urlForId);
   }
+
+  updateItem(item:Item):Observable<Item>{
+    const urlForId = `${this.itemUrl}/${item.id}`;
+    return this.http.put<Item>(urlForId, item);
+  }
+
 }

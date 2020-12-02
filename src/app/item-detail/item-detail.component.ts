@@ -12,7 +12,8 @@ import {FormGroup} from '@angular/forms';
 })
 export class ItemDetailComponent implements OnInit {
   item: Item;
-  title: string = "Item";
+  defaultTitle:string = "Item"
+  title: string;
   maxChars: number = 255;
   createItemForm: FormGroup;
   itemChangeable:boolean =false;
@@ -32,16 +33,29 @@ export class ItemDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.itemService.getItemById(id).subscribe(item => {
       this.item = item;
-      this.title += ` ${this.item.id}`;
+      this.title = `${this.defaultTitle} ${this.item.id}`;
     });
   }
 
   goBack():void {
-    this.location.back();
+    this.itemChangeable = false
+    this.getItem();
   }
 
-  updateItem():void{
-    this.itemChangeable = !this.itemChangeable;
+  updateItem(name:string, description:string, price:number, stock:number):void{
+    if(!this.itemChangeable) {
+      this.itemChangeable = !this.itemChangeable;
+    }
+    else {
+      this.item.name = name;
+      this.item.description = description;
+      this.item.price = price;
+      this.item.amountOfStock = stock;
+
+      this.itemChangeable = !this.itemChangeable;
+      this.itemService.updateItem(this.item).subscribe(item => this.item = item);
+    }
+
   }
 
   getColor():string {
