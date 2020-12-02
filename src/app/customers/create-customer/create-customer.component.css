@@ -1,0 +1,40 @@
+.create-page{
+  max-width: 1800px;
+}
+
+#localPart {
+  max-width: 45%;
+}
+
+#domainPart {
+  min-width: 100%;
+}
+
+#countryCallingCode {
+  margin-right: 10px;
+  max-width: 15%;
+  min-width: 25px;
+}
+
+.submit-btn,
+.cancel-btn {
+  min-height: 45px;
+
+}
+
+.submit-btn {
+  background-color: green;
+  min-width: 70%;
+  margin: 0 15px;
+}
+
+.cancel-btn {
+  background-color: lightgray;
+  border-color: lightgray;
+  min-width: 20%;
+  color: black;
+}
+
+.form-btn {
+  padding-top: 15px;
+}

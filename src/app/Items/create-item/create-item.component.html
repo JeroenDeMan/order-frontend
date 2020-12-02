@@ -29,9 +29,9 @@
     </div>
     <div class="form-btn ">
       <button class="btn-primary submit-btn rounded-pill border-0 font-weight-bold" type="submit"
-      (click)="createItem(itemName.value, itemDescription.value, +price.value, +amountOfStock.value)"
+      (click)="createItem(itemName.value, itemDescription.value, amountOfStock.value, price.value)"
       >CREATE</button>
-      <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" (click)="resetForm()" >CANCEL</button>
+      <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" (click)="goBack()" >CANCEL</button>
     </div>
   </form>
 </div>

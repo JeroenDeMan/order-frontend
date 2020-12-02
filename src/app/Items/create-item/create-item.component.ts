@@ -1,8 +1,8 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {CreateItem} from '../model/create-item';
-import {ItemService} from '../services/item.service';
+import {CreateItem} from '../../model/create-item';
+import {ItemService} from '../../services/item.service';
 import {Router} from '@angular/router';
-import {FormGroup} from '@angular/forms';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-create-item',
@@ -20,26 +20,23 @@ export class CreateItemComponent implements OnInit {
 
 
   constructor(private itemService: ItemService,
-              private router: Router) {
+              private router: Router,
+              private location:Location) {
   }
 
   ngOnInit(): void {
   }
 
 
-  createItem(name: string, description: string, amountOfStock: number, price: number): void {
-    let newItem = new CreateItem(name, description, amountOfStock, price);
-    console.log(newItem);
+  createItem(name: string, description: string, amountOfStock: string, price: string): void {
+    let newItem = new CreateItem(name, description, +amountOfStock, +price);
     this.itemService.createItem(newItem).subscribe(item => this.router.navigate([`items/detail/${item.id}`]));
 
   }
 
-
-
-  resetForm() {
-    this.defaultValueItem = "";
-    this.defaultValueDescription = "";
-    this.defaultValuePrice = 0;
-    this.defaultValueStock = 0;
+  goBack():void {
+    this.location.back();
   }
+
+
 }

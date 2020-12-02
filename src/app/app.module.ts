@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemComponent } from './item/item.component';
+import { ItemComponent } from './Items/item/item.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ConvertToSpacesPipe} from './pipe/convert-to-spaces-pipe';
-import { CustomerComponent } from './customer/customer.component';
+import { CustomerComponent } from './customers/customer-overview/customer.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { CreateItemComponent } from './create-item/create-item.component';
-import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { CreateItemComponent } from './Items/create-item/create-item.component';
+import { ItemDetailComponent } from './Items/item-detail/item-detail.component';
+import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
     ConvertToSpacesPipe,
     CustomerComponent,
     CreateItemComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    CreateCustomerComponent
   ],
     imports: [
         BrowserModule,

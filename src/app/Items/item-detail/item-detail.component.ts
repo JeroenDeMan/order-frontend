@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Item} from '../model/item';
-import {ItemService} from '../services/item.service';
+import {Item} from '../../model/item';
+import {ItemService} from '../../services/item.service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
 import {FormGroup} from '@angular/forms';

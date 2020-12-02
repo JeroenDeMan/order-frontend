@@ -1,0 +1,70 @@
+<div class="mx-auto create-page mx-auto">
+  <div class="header">
+    <h2>{{title}}</h2>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col">
+        <label for="firstName">Fistname</label>
+        <input #firstName name="firstName" class="form-control" type="text" id="firstName" [required]="true"
+               [(ngModel)]="defaultValueFirstName">
+      </div>
+      <div class="col">
+        <label for="lastName">Lastname</label>
+        <input #lastName name="lastName" class="form-control" type="text" id="lastName" [required]="true"
+               [(ngModel)]="defaultValueLastName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="localPart">Email</label>
+      <div class="input-group ">
+        <input #localPart name="localPart" type="text" class="form-control" id="localPart"
+               [(ngModel)]="defaultValueLocalPart" [required]="true">
+        <div class="input-group-prepend">
+          <div class="input-group-text">@</div>
+          <input #domainPart name="domainPart" type="text" class="form-control" id="domainPart"
+                 [(ngModel)]="defaultValueDomainPart" [required]="true">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="localPart">Phone number (mobile)</label>
+      <div class="input-group ">
+        <div class="input-group-prepend">
+          <div class="input-group-text">+</div>
+          <input #countryCallingCode name="countryCallingCode" type="text" class="form-control" id="countryCallingCode"
+                 [(ngModel)]="defaultValueLocalCode" [required]="true">
+          <input #phoneNumber name="phoneNumber" type="text" class="form-control" id="phoneNumber"
+                 [(ngModel)]="defaultValuePhoneNumber" [required]="true">
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-9">
+        <label for="street">Street</label>
+        <input #street type="text" name="street" class="form-control" id="street" [required]="true" [(ngModel)]="defaultValueStreet">
+      </div>
+      <div class="col-3">
+        <label for="houseNumber">Number</label>
+        <input #houseNumber type="text" name="houseNumber" class="form-control" id="houseNumber" [required]="true" [(ngModel)]="defaultValueHouseNumber">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="postalCode">Postcode</label>
+        <input #postalCode type="text" name="postalCode" class="form-control" id="postalCode" [required]="true" [(ngModel)]="defaultValueStreet">
+      </div>
+      <div class="form-group col-4">
+        <label for="city">City</label>
+        <select #city id="city" class="form-control" >
+          <option *ngFor=" let country of countries">{{country}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-btn ">
+      <button class="btn-primary submit-btn rounded-pill border-0 font-weight-bold" type="submit"
+      >CREATE</button>
+      <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" >CANCEL</button>
+    </div>
+  </form>
+</div>

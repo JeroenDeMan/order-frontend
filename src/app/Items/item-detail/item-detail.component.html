@@ -32,7 +32,7 @@
       <div class="form-btn btn-group justify-content-end">
         <button class="btn-primary update-btn rounded-pill border-0 font-weight-bold"
                 (click)="updateItem(itemName.value, itemDescription.value, +price.value, +amountOfStock.value)"
-                [ngStyle]="{'background-color':itemChangeable ? 'green' : 'lightblue' }">{{itemChangeable ? 'UPDATE' : 'EDIT'}}</button>
+                [ngStyle]="{'background-color':itemChangeable ? 'green' : 'lightblue' , 'color':itemChangeable ? 'white' : 'black'}">{{itemChangeable ? 'UPDATE' : 'EDIT'}}</button>
         <button class="btn-secondary cancel-btn rounded-pill border-0 font-weight-bold" (click)="goBack()" >CANCEL</button>
       </div>
     </form>
